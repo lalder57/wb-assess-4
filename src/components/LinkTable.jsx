@@ -1,16 +1,45 @@
-import AddRow from "./AddRowButton";
+import { useState, useEffect } from "react";
+import AddRowButton from "./AddRowButton";
 import Row from "./Row";
 import TableHeader from "./TableHeader";
 
-const LinkTable = ({ TEST_LINKS }) => {
+const LinkTable = ({ testLinks }) => {
+  // const [currentData, setCurrentData] = useState(initialData)
 
-const rows = () => {
-  return (
-    <Row 
-      initialIsEditing={false}
-    />
-  )
+  // map over the data from the server and make each object its own row. Then populate the table body with this function instead of Row.
+  // const rows = currentData.map((linkItem) => {
+  //   return (
+  //     <Row 
+  //     key={linkItem.id}
+  //     initialLinksData={linkItem}
+  //     initialIsEditing={false}
+  //     deleteFunc={() => deleteFunc(linkItem.id)}
+  //     />
+  //   )
+
+  //   useEffect(() => {
+  //     setCurrentData(initialData)
+  //   })
+  // }, [initialData])
+
+  // Function to add a new row using the AddRowButton
+const AddRow = () => {
+  const newRow = {
+    title: 'title placeholder',
+    price: 0,
+    image: 'image url placeholder'
+  }
+
+  // Axios post request to add the new row to our current data
+
 }
+
+// Axios delete request to delete a row of our choosing (will need to take in the id)
+
+const DeleteRow = (id) => {
+  
+}
+
 
 
 
@@ -23,12 +52,20 @@ const rows = () => {
           <TableHeader />
         </thead>
         <tbody>
-          <Row />
-          <Row />
-          <Row />
+          <Row 
+            testLinks={testLinks}
+          />
+          <Row 
+            testLinks={testLinks}
+          />
+          <Row
+            testLinks={testLinks}
+          />
         </tbody>
         <tfoot>
-          <AddRow />
+          <AddRowButton 
+            AddRow={AddRow}
+          />
         </tfoot>
       </table>
     </div>

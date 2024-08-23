@@ -1,15 +1,15 @@
 
 
 
-const AddRow = () => {
+const AddRowButton = ({AddRow}) => {
   return (
     <tr>
       <td></td>
       <td>
-      <button>Add new link</button>
+      <button onClick={AddRow}>Add new link</button>
       </td>
     </tr>
   )
 }
 
-export default AddRow
+export default AddRowButton

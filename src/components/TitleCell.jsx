@@ -2,12 +2,13 @@
 
 
 
-const TitleCell = () => {
+const TitleCell = ({ testLinks, value, onValueChange }) => {
   return (
     <td>
       <input 
         type="text"
-        value="title"
+        value={testLinks[0].title}
+        onChange={(e) => onValueChange(e.target.value)}
       />
     </td>
   )

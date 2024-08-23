@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
       <LinkTable
-        TEST_LINKS={TEST_LINKS} 
+        testLinks={TEST_LINKS} 
       />
    </div>
   )

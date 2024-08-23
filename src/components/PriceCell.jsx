@@ -1,12 +1,13 @@
 
 
 
-const PriceCell = () => {
+const PriceCell = ({ testLinks, value, onValueChange }) => {
   return (
     <td>
        <input 
         type="text"
-        value="price"
+        value={testLinks[0].price}
+        onChange={(e) => onValueChange(e.target.value)}
       />
     </td>
   )

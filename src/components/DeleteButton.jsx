@@ -1,10 +1,10 @@
 
 
 
-const DeleteButton = () => {
+const DeleteButton = ({ deleteFunc }) => {
   return (
     <td>
-      <button>Delete</button>
+      <button onClick={deleteFunc}>Delete</button>
     </td>
   )
 }
