@@ -3,24 +3,24 @@ import AddRowButton from "./AddRowButton";
 import Row from "./Row";
 import TableHeader from "./TableHeader";
 
-const LinkTable = ({ testLinks }) => {
-  // const [currentData, setCurrentData] = useState(initialData)
+const LinkTable = ({ initialData }) => {
+  const [currentData, setCurrentData] = useState(initialData)
 
   // map over the data from the server and make each object its own row. Then populate the table body with this function instead of Row.
-  // const rows = currentData.map((linkItem) => {
-  //   return (
-  //     <Row 
-  //     key={linkItem.id}
-  //     initialLinksData={linkItem}
-  //     initialIsEditing={false}
-  //     deleteFunc={() => deleteFunc(linkItem.id)}
-  //     />
-  //   )
+  const rows = currentData.map((linkItem) => {
+    return (
+      <Row 
+      key={linkItem.id}
+      initialLinksData={linkItem}
+      initialIsEditing={false}
+      deleteFunc={() => deleteFunc(linkItem.id)}
+      />
+    )
+  })
 
-  //   useEffect(() => {
-  //     setCurrentData(initialData)
-  //   })
-  // }, [initialData])
+    useEffect(() => {
+      setCurrentData(initialData)
+  }, [initialData])
 
   // Function to add a new row using the AddRowButton
 const AddRow = () => {
@@ -52,15 +52,7 @@ const DeleteRow = (id) => {
           <TableHeader />
         </thead>
         <tbody>
-          <Row 
-            testLinks={testLinks}
-          />
-          <Row 
-            testLinks={testLinks}
-          />
-          <Row
-            testLinks={testLinks}
-          />
+          {rows}
         </tbody>
         <tfoot>
           <AddRowButton 

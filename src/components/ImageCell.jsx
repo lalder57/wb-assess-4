@@ -2,12 +2,12 @@
 
 
 
-const ImageCell = ({ testLinks, value, onValueChange }) => {
+const ImageCell = ({ value, onValueChange }) => {
   return (
     <td>
        <input 
         type="text"
-        value={testLinks[0].image}
+        value={value}
         onChange={(e) => onValueChange(e.target.value)}
       />
     </td>

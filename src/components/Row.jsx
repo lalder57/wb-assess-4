@@ -5,11 +5,11 @@ import ImageCell from "./ImageCell";
 import DeleteButton from "./DeleteButton";
 import { useState } from "react";
 
-const Row = ( {testLinks, initialIsEditing, initialLinksData, deleteFunc } ) => {
+const Row = ( { initialIsEditing, initialLinksData, deleteFunc } ) => {
   const [editMode, setEditMode] = useState(initialIsEditing)
-  // const [title, setTitle] = useState(initialLinksData.title)
-  // const [price, setPrice] = useState(initialLinksData.price)
-  // const [image, setImage] = useState(initialLinksData.image)
+  const [title, setTitle] = useState(initialLinksData.title)
+  const [price, setPrice] = useState(initialLinksData.price)
+  const [image, setImage] = useState(initialLinksData.image)
 
   // Function to change editMode bake and forth
   const changeEditMode = () => setEditMode(true);
@@ -31,20 +31,17 @@ const Row = ( {testLinks, initialIsEditing, initialLinksData, deleteFunc } ) => 
         editClick={changeEditMode}
         saveClick={changeNormalMode}
       />
-      <TitleCell 
-        testLinks={testLinks}
-        // value={title}
-        // onValueChange={setTitle}
+      <TitleCell
+        value={title}
+        onValueChange={setTitle}
       />
       <PriceCell
-        testLinks={testLinks}
-        // value={price}
-        // onValueChange={setPrice}
+        value={price}
+        onValueChange={setPrice}
       />
       <ImageCell 
-        testLinks={testLinks}
-        // value={image}
-        // onValueChange={setImage}
+        value={image}
+        onValueChange={setImage}
       />
       <DeleteButton 
         // deleteFunc={deleteFunc}
