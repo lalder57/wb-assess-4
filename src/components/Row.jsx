@@ -12,6 +12,9 @@ const Row = ( { initialIsEditing, initialLinksData, deleteFunc } ) => {
   const [price, setPrice] = useState(initialLinksData.price)
   const [image, setImage] = useState(initialLinksData.image)
 
+  // console.log(image);
+  
+
   // Function to change editMode bake and forth
   const changeEditMode = () => setEditMode(true);
   const changeNormalMode = () => {
@@ -35,6 +38,7 @@ const Row = ( { initialIsEditing, initialLinksData, deleteFunc } ) => {
       setEditMode(false);
 
     })
+
 
     
   }

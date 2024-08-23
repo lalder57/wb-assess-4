@@ -1,8 +1,15 @@
 
 
 
-
 const ImageCell = ({ isEditing, value, onValueChange }) => {
+
+  // Function to turn imageUrl into a link
+  // const turnToLink = (value) => {
+  //  return (
+  //    <Link to="{value}">Click to shop</Link>
+  //  )
+  // }
+
   return isEditing? (
     <td>
       <input 
@@ -13,9 +20,10 @@ const ImageCell = ({ isEditing, value, onValueChange }) => {
     </td>
   ) : (
     <td>
-      {value}
+      <a href={value} target="_blank">Click to shop</a>
     </td>
   )
 }
 
 export default ImageCell
+
