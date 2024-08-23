@@ -6,6 +6,7 @@ import DeleteButton from "./DeleteButton";
 import { useState } from "react";
 import axios from "axios";
 
+
 const Row = ( { initialIsEditing, initialLinksData, deleteFunc } ) => {
   const [editMode, setEditMode] = useState(initialIsEditing)
   const [title, setTitle] = useState(initialLinksData.title)

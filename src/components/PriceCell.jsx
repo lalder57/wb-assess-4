@@ -1,6 +1,5 @@
 
 
-
 const PriceCell = ({ isEditing, value, onValueChange }) => {
   return isEditing? (
     <td>

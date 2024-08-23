@@ -52,7 +52,7 @@ const deleteRow = (id) => {
 
 
   return (
-    <div>
+    <div id="table-div">
       <table>
         <thead>
           <TableHeader />

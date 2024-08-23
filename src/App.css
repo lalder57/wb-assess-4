@@ -1,16 +1,29 @@
 body {
+  height: 100vh;
+  max-height: 100%;
   background-image: url("https://static.vecteezy.com/system/resources/previews/036/594/757/non_2x/ai-generated-cleaning-company-advertisment-background-with-copy-space-free-photo.jpg");
   background-repeat: no-repeat;
-  background-size:cover
+  background-size:cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 #root {
-  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  text-align: center; */
 }
+
+
 
 table {
   border: 2px solid black;
+  
 }
