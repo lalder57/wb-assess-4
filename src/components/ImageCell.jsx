@@ -2,14 +2,18 @@
 
 
 
-const ImageCell = ({ value, onValueChange }) => {
-  return (
+const ImageCell = ({ isEditing, value, onValueChange }) => {
+  return isEditing? (
     <td>
-       <input 
+      <input 
         type="text"
         value={value}
         onChange={(e) => onValueChange(e.target.value)}
       />
+    </td>
+  ) : (
+    <td>
+      {value}
     </td>
   )
 }

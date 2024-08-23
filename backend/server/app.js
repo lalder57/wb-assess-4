@@ -20,8 +20,17 @@ import handlerfunctions from './controller.js';
 // - What will the endpoint string look like? (url)
 // - What should the response look like? (keep consistent)
 
-// First Route is goint to GETinvoices, won't need a body/query/params, 
+// First Route is going to GET links, won't need a body/query/params, 
 app.get('/api/links', handlerFunctions.getLinks)
+
+// Second Route is going to add a link (POST), will need a body
+app.post('/api/addLink', handlerFunctions.addLink)
+
+// Third Route is going to DELETE a link, will need a body.
+app.delete('/api/deleteLink/:id', handlerFunctions.deleteLink)
+
+// Fourth Route is goint to edit a link (PUT), will need a body.
+app.put('/api/editlink', handlerFunctions.editLink)
 
 
 

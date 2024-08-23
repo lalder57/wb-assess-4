@@ -20,14 +20,52 @@ const handlerFunctions = {
   },
 
   addLink: (req, res) => {
+    // Get values from req.body
+    const { title, price, image } = req.body;
+    // Create a new object with those values
+    const newLink = { 
+      id: globalId,
+      title,
+      price,
+      image
+    }
+    //Increment globalId for the next link
+    globalId++
+    // Add the newLink object to testLinks
+    testLinks.push(newLink)
+    // Send response
+    res.send({
+      message: 'Link added successfully!',
+      newLink: newLink
+    })
 
   }, 
 
   deleteLink: (req, res) => {
+    const { id } = req.params;
+    testLinks = testLinks.filter((link) => link.id !== +id)
+    res.send({
+      message: 'Bye-bye link',
+      links: testLinks
+    })
 
   }, 
 
   editLink: (req, res) => {
+    const { id, title, price, image } = req.body;
+    const idx = testLinks.findIndex((link) => link.id === +id);
+    // Grab that invoice [idx]
+    const link = testLinks[idx];
+
+    // update values
+    link.title = title;
+    link.price = +price;
+    link.image = image;
+
+    res.send({
+      message: 'Link updated successfully!',
+      updatedLink: link
+    })
 
   }
 }

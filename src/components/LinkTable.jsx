@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import AddRowButton from "./AddRowButton";
 import Row from "./Row";
 import TableHeader from "./TableHeader";
+import axios from "axios";
 
 const LinkTable = ({ initialData }) => {
   const [currentData, setCurrentData] = useState(initialData)
@@ -13,7 +14,7 @@ const LinkTable = ({ initialData }) => {
       key={linkItem.id}
       initialLinksData={linkItem}
       initialIsEditing={false}
-      deleteFunc={() => deleteFunc(linkItem.id)}
+      deleteFunc={() => deleteRow(linkItem.id)}
       />
     )
   })
@@ -31,18 +32,23 @@ const AddRow = () => {
   }
 
   // Axios post request to add the new row to our current data
+  axios.post('/api/addLink', newRow)
+  .then((response) => {
+    console.log(response.data)
+    setCurrentData([...currentData, response.data.newLink])
+  })
 
 }
 
 // Axios delete request to delete a row of our choosing (will need to take in the id)
+const deleteRow = (id) => {
+  axios.delete(`/api/deleteLink/${id}`)
+  .then((response) => {
+    alert(response.data.message)
+    setCurrentData(response.data.links)
+  })
 
-const DeleteRow = (id) => {
-  
 }
-
-
-
-
 
 
   return (
