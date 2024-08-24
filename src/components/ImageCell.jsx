@@ -20,7 +20,7 @@ const ImageCell = ({ isEditing, value, onValueChange }) => {
     </td>
   ) : (
     <td>
-      <a href={value} target="_blank">Click to shop</a>
+      <a href={value} target="_blank">Click to view</a>
     </td>
   )
 }

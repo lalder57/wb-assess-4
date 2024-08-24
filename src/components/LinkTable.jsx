@@ -7,6 +7,7 @@ import axios from "axios";
 const LinkTable = ({ initialData }) => {
   const [currentData, setCurrentData] = useState(initialData)
 
+
   // map over the data from the server and make each object its own row. Then populate the table body with this function instead of Row.
   const rows = currentData.map((linkItem) => {
     return (
@@ -26,9 +27,9 @@ const LinkTable = ({ initialData }) => {
   // Function to add a new row using the AddRowButton
 const AddRow = () => {
   const newRow = {
-    title: 'title placeholder',
+    title: 'Enter your product',
     price: 0,
-    image: 'image url placeholder'
+    image: 'Enter your image url'
   }
 
   // Axios post request to add the new row to our current data
